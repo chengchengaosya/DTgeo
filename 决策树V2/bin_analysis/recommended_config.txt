@@ -1,0 +1,22 @@
+# ============================================================
+#  bin_optimizer.py 自动推荐的分箱阈值
+#  Auto-recommended binning thresholds
+# ============================================================
+
+# 断距中值: 最优方案=单阈值, F1=0.6795
+FAULT_BINS = [-float("inf"), 300.0, float("inf")]
+
+# 倾角中值: 最优方案=单阈值, F1=0.6642
+ANGLE_BINS = [-float("inf"), 30.0, float("inf")]
+
+# 延伸长度(km): 最优方案=单阈值, F1=0.6498
+LENGTH_BINS = [-float("inf"), 5.68, float("inf")]
+
+# SGR: 最优方案=单阈值, F1=0.6777
+SGR_BINS = [-float("inf"), 0.704, float("inf")]
+
+# 碳酸盐岩: 最优方案=单阈值, F1=0.7117
+ITE_BINS = [-float("inf"), 13.4, float("inf")]
+
+# 微裂缝: 最优方案=单阈值, F1=0.6802
+MICRO_BINS = [-float("inf"), 0.04, float("inf")]

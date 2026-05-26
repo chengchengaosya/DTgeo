@@ -1,0 +1,66 @@
+{
+  "params": {
+    "tree_params": {
+      "criterion": "gini",
+      "max_depth": 5,
+      "min_samples_split": 17,
+      "min_samples_leaf": 14,
+      "ccp_alpha": 0.003,
+      "class_weight": "balanced"
+    },
+    "tree_cv_f1": 0.6896,
+    "tree_loocv_f1": 0.7176,
+    "tree_loocv_acc": 0.7073,
+    "bagging_loocv_f1": 0.7176,
+    "use_bagging": false
+  },
+  "feature_subset_loocv_f1": 0.7459,
+  "test_metrics": {
+    "accuracy": 0.6842,
+    "balanced_accuracy": 0.6778,
+    "precision": 0.7143,
+    "recall": 0.5556,
+    "specificity": 0.8,
+    "npv": 0.6667,
+    "f1_score": 0.625,
+    "mcc": 0.368,
+    "kappa": 0.3596,
+    "log_loss": 0.6176,
+    "brier_score": 0.2188
+  },
+  "loocv_metrics": {
+    "accuracy": 0.7049,
+    "balanced_accuracy": 0.705,
+    "precision": 0.6947,
+    "recall": 0.7253,
+    "f1_score": 0.7097,
+    "mcc": 0.4104,
+    "kappa": 0.41
+  },
+  "roc_auc": 0.6667,
+  "ap": 0.6118,
+  "cv": {
+    "accuracy": {
+      "mean": 0.7053,
+      "std": 0.0956
+    },
+    "f1": {
+      "mean": 0.7032,
+      "std": 0.1213
+    },
+    "precision": {
+      "mean": 0.6937,
+      "std": 0.1099
+    },
+    "recall": {
+      "mean": 0.7244,
+      "std": 0.1521
+    }
+  },
+  "features": [
+    "倾角中值",
+    "SGR_bin",
+    "碳酸盐岩_bin",
+    "有微裂缝"
+  ]
+}

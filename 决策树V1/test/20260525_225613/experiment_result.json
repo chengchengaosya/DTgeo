@@ -1,0 +1,26 @@
+{
+  "best_params": {
+    "ccp_alpha": 0.0,
+    "criterion": "gini",
+    "max_depth": 4,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2
+  },
+  "test_metrics": {
+    "accuracy": 0.5405,
+    "balanced_accuracy": 0.538,
+    "precision": 0.5333,
+    "recall": 0.4444,
+    "f1_score": 0.4848,
+    "mcc": 0.0774,
+    "kappa": 0.0764,
+    "log_loss": 5.4915,
+    "brier_score": 0.3578
+  },
+  "roc_auc": 0.5585,
+  "average_precision": 0.5266,
+  "cv_accuracy_mean": 0.5968,
+  "cv_accuracy_std": 0.0863,
+  "cv_f1_mean": 0.6086,
+  "cv_f1_std": 0.1037
+}

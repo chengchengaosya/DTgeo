@@ -1,0 +1,150 @@
+=================================================================
+  断层启闭性决策树分类 — 完整实验报告
+  Fault Sealing Decision Tree Classification — Full Report
+=================================================================
+  实验时间 / Experiment Time: 2026-05-26 18:51:02
+
+=================================================================
+  1. 最佳超参数 / Best Hyperparameters
+=================================================================
+
+    选择特征数 / Selected Features Count: 10
+    剪枝参数 / CCP Alpha: 0.013209393346379647
+    类别权重 / Class Weight: None
+    分裂准则 / Split Criterion: entropy
+    最大深度 / Max Depth: 3
+    最小叶节点样本 / Min Samples Leaf: 3
+    最小分裂样本数 / Min Samples Split: 8
+
+    被选中的特征 / Selected Features:
+      1. 延伸长度(km)
+      2. 碳酸盐岩
+      3. 微裂缝
+      4. SGR×碳酸盐岩
+      5. SGR×断距
+      6. 断距×倾角
+      7. 微裂缝×SGR
+      8. 碳酸盐岩/SGR
+      9. 断距/倾角
+      10. log_延伸
+
+=================================================================
+  2. 测试集评估指标 / Test Set Evaluation Metrics
+=================================================================
+
+    准确率 / Accuracy: 0.5676
+      ↳ 所有预测正确的比例
+        Proportion of correct predictions
+
+    平衡准确率 / Balanced Accuracy: 0.5760
+      ↳ 各类别召回率的算术平均
+        Average of recall for each class
+
+    精确率(PPV) / Precision (PPV): 0.5333
+      ↳ 预测为正类中真正为正的比例
+        True positives / predicted positives
+
+    召回率(灵敏度) / Recall (Sensitivity): 0.8889
+      ↳ 实际正类中被正确识别的比例
+        True positives / actual positives
+
+    特异度 / Specificity: 0.2632
+      ↳ 实际负类中被正确识别的比例
+        True negatives / actual negatives
+
+    阴性预测值 / Negative Predictive Value: 0.7143
+      ↳ 预测为负类中真正为负的比例
+        True negatives / predicted negatives
+
+    F1分数 / F1-Score: 0.6667
+      ↳ 精确率和召回率的调和平均
+        Harmonic mean of precision and recall
+
+    马修斯相关系数 / Matthews Correlation Coefficient: 0.1940
+      ↳ 综合考虑TP/TN/FP/FN的相关系数，[-1,1]
+        Correlation between observed and predicted, range [-1,1]
+
+    科恩Kappa系数 / Cohen's Kappa: 0.1494
+      ↳ 扣除随机一致性后的分类准确度
+        Agreement corrected for chance
+
+    对数损失 / Log Loss: 0.6365
+      ↳ 预测概率与真实标签的交叉熵，越小越好
+        Cross-entropy between predictions and truth, lower is better
+
+    布里尔分数 / Brier Score: 0.2203
+      ↳ 预测概率与真实标签的均方误差，越小越好
+        MSE of predicted probabilities, lower is better
+
+    ROC AUC: 0.6696
+      ↳ ROC曲线下面积，综合衡量分类器在所有阈值下的表现
+        Area under the ROC curve
+
+    平均精度 / Average Precision (AP): 0.6191
+      ↳ PR曲线下面积，关注正类检测能力
+        Area under the Precision-Recall curve
+
+=================================================================
+  3. 分类报告 / Classification Report
+=================================================================
+
+              precision    recall  f1-score   support
+
+      封闭 (0)       0.71      0.26      0.38        19
+      开启 (1)       0.53      0.89      0.67        18
+
+    accuracy                           0.57        37
+   macro avg       0.62      0.58      0.53        37
+weighted avg       0.63      0.57      0.52        37
+
+=================================================================
+  4. 交叉验证结果 / Cross-Validation Results
+=================================================================
+
+    准确率 / Accuracy:
+      均值 Mean: 0.5851 ± 0.0860
+      各折 Per-fold: 0.6842, 0.5263, 0.4737, 0.5556, 0.6667, 0.6667, 0.5556, 0.5000, 0.5000, 0.7222
+
+    F1分数 / F1-Score:
+      均值 Mean: 0.6366 ± 0.1492
+      各折 Per-fold: 0.7500, 0.4706, 0.2857, 0.6923, 0.7826, 0.7273, 0.6667, 0.5714, 0.6364, 0.7826
+
+    精确率 / Precision:
+      均值 Mean: 0.5569 ± 0.0794
+      各折 Per-fold: 0.6429, 0.5000, 0.4000, 0.5294, 0.6667, 0.6154, 0.5333, 0.5000, 0.5385, 0.6429
+
+    召回率 / Recall:
+      均值 Mean: 0.7233 ± 0.2648
+      各折 Per-fold: 0.9000, 0.4444, 0.2222, 1.0000, 0.6667, 1.0000, 0.8889, 0.6667, 0.4444, 1.0000
+
+=================================================================
+  5. 多模型对比 / Model Comparison
+=================================================================
+
+    模型 Model             |          Acc |           F1
+    -------------------- | ------------ | ------------
+    决策树(调优)              | 0.6012±0.0258 | 0.6178±0.1151
+    Bagging决策树           | 0.6344±0.0868 | 0.6570±0.0884
+    随机森林                 | 0.6182±0.0582 | 0.6227±0.0531
+    AdaBoost             | 0.6347±0.0707 | 0.6061±0.0865
+    GBDT                 | 0.6291±0.0822 | 0.6127±0.0726
+
+=================================================================
+  6. 评估指标解读指南 / Metrics Interpretation Guide
+=================================================================
+
+    Accuracy > 0.7       → 模型可接受 / Acceptable model
+    Accuracy > 0.85      → 模型良好 / Good model
+    F1 > 0.7             → 精确率召回率均衡 / Balanced precision-recall
+    AUC > 0.8            → 分类能力较强 / Strong discriminative ability
+    AUC > 0.9            → 分类能力优秀 / Excellent discriminative ability
+    MCC > 0.3            → 模型优于随机 / Better than random
+    MCC > 0.7            → 模型表现优秀 / Excellent performance
+    Kappa > 0.6          → 一致性较好 / Substantial agreement
+    Kappa > 0.8          → 一致性优秀 / Almost perfect agreement
+    Brier < 0.25         → 概率校准较好 / Well-calibrated probabilities
+    Log Loss → 0         → 预测置信度高 / High prediction confidence
+
+=================================================================
+  报告结束 / End of Report
+=================================================================

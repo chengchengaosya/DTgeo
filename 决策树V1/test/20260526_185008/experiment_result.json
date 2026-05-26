@@ -1,0 +1,136 @@
+{
+  "best_params": {
+    "selector__k": 10,
+    "tree__ccp_alpha": 0.013209393346379647,
+    "tree__class_weight": "None",
+    "tree__criterion": "entropy",
+    "tree__max_depth": 3,
+    "tree__min_samples_leaf": 3,
+    "tree__min_samples_split": 8
+  },
+  "test_metrics": {
+    "accuracy": 0.5676,
+    "balanced_accuracy": 0.576,
+    "precision": 0.5333,
+    "recall_sensitivity": 0.8889,
+    "specificity": 0.2632,
+    "npv": 0.7143,
+    "f1_score": 0.6667,
+    "mcc": 0.194,
+    "kappa": 0.1494,
+    "log_loss": 0.6365,
+    "brier_score": 0.2203
+  },
+  "roc_auc": 0.6696,
+  "average_precision": 0.6191,
+  "cv_results": {
+    "accuracy": {
+      "mean": 0.5851,
+      "std": 0.086,
+      "per_fold": [
+        0.6842,
+        0.5263,
+        0.4737,
+        0.5556,
+        0.6667,
+        0.6667,
+        0.5556,
+        0.5,
+        0.5,
+        0.7222
+      ]
+    },
+    "f1": {
+      "mean": 0.6366,
+      "std": 0.1492,
+      "per_fold": [
+        0.75,
+        0.4706,
+        0.2857,
+        0.6923,
+        0.7826,
+        0.7273,
+        0.6667,
+        0.5714,
+        0.6364,
+        0.7826
+      ]
+    },
+    "precision": {
+      "mean": 0.5569,
+      "std": 0.0794,
+      "per_fold": [
+        0.6429,
+        0.5,
+        0.4,
+        0.5294,
+        0.6667,
+        0.6154,
+        0.5333,
+        0.5,
+        0.5385,
+        0.6429
+      ]
+    },
+    "recall": {
+      "mean": 0.7233,
+      "std": 0.2648,
+      "per_fold": [
+        0.9,
+        0.4444,
+        0.2222,
+        1.0,
+        0.6667,
+        1.0,
+        0.8889,
+        0.6667,
+        0.4444,
+        1.0
+      ]
+    }
+  },
+  "model_comparison": {
+    "决策树(调优)": {
+      "acc_mean": 0.6012,
+      "acc_std": 0.0258,
+      "f1_mean": 0.6178,
+      "f1_std": 0.1151
+    },
+    "Bagging决策树": {
+      "acc_mean": 0.6344,
+      "acc_std": 0.0868,
+      "f1_mean": 0.657,
+      "f1_std": 0.0884
+    },
+    "随机森林": {
+      "acc_mean": 0.6182,
+      "acc_std": 0.0582,
+      "f1_mean": 0.6227,
+      "f1_std": 0.0531
+    },
+    "AdaBoost": {
+      "acc_mean": 0.6347,
+      "acc_std": 0.0707,
+      "f1_mean": 0.6061,
+      "f1_std": 0.0865
+    },
+    "GBDT": {
+      "acc_mean": 0.6291,
+      "acc_std": 0.0822,
+      "f1_mean": 0.6127,
+      "f1_std": 0.0726
+    }
+  },
+  "selected_features": [
+    "延伸长度(km)",
+    "碳酸盐岩",
+    "微裂缝",
+    "SGR×碳酸盐岩",
+    "SGR×断距",
+    "断距×倾角",
+    "微裂缝×SGR",
+    "碳酸盐岩/SGR",
+    "断距/倾角",
+    "log_延伸"
+  ]
+}

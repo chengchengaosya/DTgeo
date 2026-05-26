@@ -1,0 +1,97 @@
+{
+  "all_params": {
+    "dt_params": {
+      "criterion": "gini",
+      "max_depth": 4,
+      "min_samples_split": 5,
+      "min_samples_leaf": 8,
+      "ccp_alpha": 0.02,
+      "class_weight": "balanced"
+    },
+    "dt_cv_f1": 0.7641,
+    "stacking_cv_f1": 0.6234,
+    "best_model": "DecisionTree",
+    "optimal_threshold": 0.8013
+  },
+  "test_metrics": {
+    "accuracy": 0.5862,
+    "balanced_accuracy": 0.5962,
+    "precision": 0.6667,
+    "recall_sensitivity": 0.5,
+    "specificity": 0.6923,
+    "npv": 0.5294,
+    "f1_score": 0.5714,
+    "mcc": 0.1942,
+    "kappa": 0.1869,
+    "log_loss": 5.5637,
+    "brier_score": 0.347
+  },
+  "roc_auc": 0.5986,
+  "ap": 0.6698,
+  "cv": {
+    "accuracy": {
+      "mean": 0.6381,
+      "std": 0.0877
+    },
+    "f1": {
+      "mean": 0.6526,
+      "std": 0.0855
+    },
+    "precision": {
+      "mean": 0.7214,
+      "std": 0.1514
+    },
+    "recall": {
+      "mean": 0.6232,
+      "std": 0.1246
+    }
+  },
+  "comparison": {
+    "决策树": {
+      "acc_mean": 0.631,
+      "acc_std": 0.0377,
+      "f1_mean": 0.6329,
+      "f1_std": 0.0706
+    },
+    "Bagging": {
+      "acc_mean": 0.6667,
+      "acc_std": 0.0828,
+      "f1_mean": 0.6958,
+      "f1_std": 0.0764
+    },
+    "随机森林": {
+      "acc_mean": 0.6453,
+      "acc_std": 0.0679,
+      "f1_mean": 0.6711,
+      "f1_std": 0.0612
+    },
+    "ExtraTrees": {
+      "acc_mean": 0.6096,
+      "acc_std": 0.0692,
+      "f1_mean": 0.6497,
+      "f1_std": 0.0584
+    },
+    "GBDT": {
+      "acc_mean": 0.6453,
+      "acc_std": 0.06,
+      "f1_mean": 0.6681,
+      "f1_std": 0.0646
+    }
+  },
+  "features": [
+    "断距中值",
+    "倾角中值",
+    "延伸长度(km)",
+    "SGR",
+    "碳酸盐岩",
+    "微裂缝",
+    "SGR_bin",
+    "断距_bin",
+    "碳酸盐岩_bin",
+    "倾角_bin",
+    "有微裂缝",
+    "SGR×碳酸盐岩",
+    "SGR×断距",
+    "断距/延伸"
+  ]
+}
